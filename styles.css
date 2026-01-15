@@ -218,6 +218,32 @@ main {
   color: var(--paper);
 }
 
+.microcopy-list {
+  margin-top: 0.4rem;
+  color: var(--paper);
+  font-size: 0.92rem;
+}
+
+.microcopy-lede {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--brass-light);
+}
+
+.microcopy-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.microcopy-list li {
+  font-family: "Source Serif 4", "Georgia", serif;
+  color: var(--text);
+}
+
 .hero-media {
   position: relative;
   display: flex;
