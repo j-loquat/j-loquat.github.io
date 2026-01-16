@@ -283,6 +283,15 @@ main {
   color: var(--text);
 }
 
+.manifesto {
+  font-size: 1rem;
+  color: var(--paper);
+  font-family: "Source Serif 4", "Georgia", serif;
+  border-left: 2px solid rgba(86, 198, 200, 0.6);
+  padding-left: 1rem;
+  margin: 1rem 0 1.2rem;
+}
+
 .cta-row {
   display: flex;
   flex-wrap: wrap;
@@ -306,6 +315,9 @@ main {
   margin-bottom: 0.5rem;
   font-weight: 600;
   color: var(--brass-light);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.65rem;
 }
 
 .microcopy-list ul {
@@ -313,12 +325,30 @@ main {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 0.35rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
 }
 
 .microcopy-list li {
   font-family: "Source Serif 4", "Georgia", serif;
   color: var(--text);
+  background: linear-gradient(160deg, rgba(27, 21, 22, 0.9), rgba(44, 35, 38, 0.85));
+  border: 1px solid rgba(199, 154, 90, 0.35);
+  border-radius: 12px;
+  padding: 0.55rem 0.75rem;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.microcopy-list li::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(224, 194, 139, 0.15);
+  border-radius: 10px;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .hero-media {
@@ -818,6 +848,10 @@ main {
 
   .scoreboard {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .microcopy-list ul {
+    grid-template-columns: 1fr;
   }
 
   .cards {
