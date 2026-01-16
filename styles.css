@@ -105,7 +105,7 @@ img {
 
 .topbar {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   gap: 1rem;
   align-items: center;
   margin: 1.5rem auto 2rem;
@@ -284,12 +284,9 @@ main {
 }
 
 .manifesto {
-  font-size: 1rem;
-  color: var(--paper);
+  color: var(--text);
   font-family: "Source Serif 4", "Georgia", serif;
-  border-left: 2px solid rgba(86, 198, 200, 0.6);
-  padding-left: 1rem;
-  margin: 1rem 0 1.2rem;
+  margin: 0;
 }
 
 .cta-row {
@@ -325,29 +322,71 @@ main {
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.6rem;
 }
 
 .microcopy-list li {
   font-family: "Source Serif 4", "Georgia", serif;
   color: var(--text);
-  background: linear-gradient(160deg, rgba(27, 21, 22, 0.9), rgba(44, 35, 38, 0.85));
-  border: 1px solid rgba(199, 154, 90, 0.35);
-  border-radius: 12px;
-  padding: 0.55rem 0.75rem;
-  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.35);
+  padding-left: 1.6rem;
   position: relative;
-  overflow: hidden;
+}
+
+.microcopy-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(199, 154, 90, 0.7);
+  box-shadow: 0 0 10px rgba(86, 198, 200, 0.35);
+  background: radial-gradient(circle, rgba(86, 198, 200, 0.25), transparent 70%);
 }
 
 .microcopy-list li::after {
   content: "";
   position: absolute;
-  inset: 0;
+  left: 5px;
+  top: 0.9rem;
+  bottom: -0.6rem;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(199, 154, 90, 0.4), transparent);
+  pointer-events: none;
+}
+
+.microcopy-list li:last-child::after {
+  display: none;
+}
+
+.microcopy-list li span {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.microcopy-list li em {
+  color: var(--muted);
+  font-style: normal;
+  margin-left: 0.3rem;
+}
+
+.manifesto-banner {
+  position: relative;
+  padding: 1.2rem 1.4rem;
+  margin: 0 0 1.2rem;
+  background: linear-gradient(140deg, rgba(35, 27, 29, 0.9), rgba(24, 19, 20, 0.95));
+  border: 1px solid rgba(199, 154, 90, 0.35);
+  clip-path: polygon(0 0, 100% 0, 94% 100%, 0 100%);
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.4);
+}
+
+.manifesto-banner::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
   border: 1px solid rgba(224, 194, 139, 0.15);
-  border-radius: 10px;
-  opacity: 0.6;
+  clip-path: polygon(0 0, 100% 0, 94% 100%, 0 100%);
   pointer-events: none;
 }
 
@@ -443,9 +482,11 @@ main {
 
 .scoreboard .stat {
   display: block;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-family: "Cinzel", serif;
   color: var(--teal);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
 .scoreboard::after {
@@ -879,6 +920,14 @@ main {
 
   .frame {
     padding: 1.3rem;
+  }
+
+  .manifesto-banner {
+    clip-path: none;
+  }
+
+  .manifesto-banner::after {
+    clip-path: none;
   }
 }
 
