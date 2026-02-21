@@ -1,226 +1,308 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>QuestOps -- Run the Agentic Kingdom</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&family=Source+Serif+4:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-9ZJH7BfQ4Z9E2dnv5QvEY1N2tM5I9f3YcZ4J9N6dDP6ftB3Eo8Jq5xyAyGx8xgq7ulrV9v7TzNQ1Sx2P+9yQeA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="topbar frame">
-      <a
-        class="profile"
-        href="https://x.com/TendiesOfWisdom"
-        target="_blank"
-        rel="noreferrer"
-        aria-label="TendiesOfWisdom on X"
-      >
-        <span class="profile-ring"></span>
-        <img src="Twitter-Profile.jpg" alt="TendiesOfWisdom avatar" />
-      </a>
-      <div class="brand">
-        <span class="brand-title">QuestOps -- DevOps for Agentic Teams</span>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watts Daily Compass</title>
+  <meta name="description" content="A practical, values-guided daily compass inspired by Alan Watts: Control, Current, Teaching, Belonging.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-grain" aria-hidden="true"></div>
+
+  <header class="hero section" id="top" data-reveal>
+    <nav class="top-nav" aria-label="Main">
+      <a href="#questions">The Four Questions</a>
+      <a href="#day-rhythm">Daily Rhythm</a>
+      <a href="#daily-card">Printable Card</a>
+    </nav>
+
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Watts Daily Compass</p>
+        <h1>From Fighting Life to Flowing With It</h1>
+        <p class="lead">Many days feel like constant pushing, forcing, and resisting. Alan Watts suggested another way: cooperate with life. This compass turns that into a daily practice of four simple questions.</p>
       </div>
-    </header>
+      <figure class="hero-figure frame-tilt">
+        <img src="images/hero-boat-river-sunrise.png" alt="A person in a small boat drifting on a calm river at sunrise" loading="eager">
+      </figure>
+    </div>
+  </header>
 
-    <main>
-      <section class="hero frame reveal">
-        <div class="hero-text">
-          <h1>QuestOps</h1>
-          <div class="manifesto-banner">
-            <p class="lede manifesto">
-              Agentic coding needs a command interface, not just chat. Games already solved real-time
-              coordination: queues, minimaps, party management, fog-of-war, checkpoints. I'm calling
-              this QuestOps: DevOps for agent swarms -- run your codebase like an RTS/RPG.
-            </p>
-          </div>
-          <div class="microcopy-list">
-            <span class="microcopy-lede">QuestOps Key Components</span>
-            <ul class="key-components">
-              <li><span>Clear Objectives</span> <em>(Quests)</em></li>
-              <li><span>Explicit Roles + Permissions</span> <em>(Parties)</em></li>
-              <li><span>Gated Stages</span> <em>(Quest Chains)</em></li>
-              <li><span>Evidence Trails</span> <em>(Chronicles)</em></li>
-              <li><span>Approvals + Rollbacks</span> <em>(Because Agents Make... Creative Choices)</em></li>
-            </ul>
-          </div>
-        </div>
-        <div class="hero-media">
-          <figure class="image-frame">
-            <img src="RTS-2.jpg" alt="RTS overview interface" />
-            <figcaption>
-              Strategic overview -> squads -> queues -> alerts. Project management with a pulse.
-            </figcaption>
-          </figure>
-          <div class="scoreboard frame delight-once" data-delight="scoreboard">
-            <div>
-              <span class="label">Agents</span>
-              <span class="stat">Active</span>
-            </div>
-            <div>
-              <span class="label">Queues</span>
-              <span class="stat">Visible</span>
-            </div>
-            <div>
-              <span class="label">Tests</span>
-              <span class="stat">Green</span>
-            </div>
-            <div>
-              <span class="label">Chronicle</span>
-              <span class="stat">Tracked</span>
-            </div>
-          </div>
-        </div>
-      </section>
+  <main>
+    <section class="section strategy" id="strategy" data-reveal>
+      <div>
+        <p class="eyebrow">What It Is</p>
+        <h2>A Simple Daily Life Strategy</h2>
+        <p>Four questions, one compass for everyday decisions. Rooted in surrender, curiosity, and interconnection. Fast enough for a busy moment, deep enough to reshape your lifestyle.</p>
+      </div>
+      <figure class="offset-figure">
+        <img src="images/compass-calendar-minimal.png" alt="Minimal compass icon over a calendar page" loading="lazy">
+      </figure>
+    </section>
 
-      <section class="split frame reveal" id="rts-cockpit">
-        <div>
-          <span class="eyebrow">RTS Mode</span>
-          <h2>RTS already has the cockpit we need</h2>
-          <p>
-            When you can command fifty units under pressure, you can probably ship a login page. The
-            UI we need already exists -- it just speaks the language of squads and queues.
-          </p>
-          <ul class="steal-list">
-            <li><span>Control Groups</span> -> agent squads (Frontend / Backend / Testing / Research)</li>
-            <li><span>Build Queues</span> -> task queues + dependencies (not "go do stuff")</li>
-            <li><span>Global Task Board</span> -> real WIP limits, real flow</li>
-            <li><span>Event Log</span> -> tests failed / tokens spiking / merge conflict</li>
+    <section class="section questions" id="questions" data-reveal>
+      <div class="questions-head">
+        <p class="eyebrow">The Four Questions</p>
+        <h2>One Compass for Everyday Decisions</h2>
+      </div>
+
+      <div class="questions-layout">
+        <div class="compass-widget" aria-live="polite">
+          <button class="compass-node is-active" data-key="control" type="button">Control</button>
+          <button class="compass-node" data-key="current" type="button">Current</button>
+          <button class="compass-node" data-key="teaching" type="button">Teaching</button>
+          <button class="compass-node" data-key="belonging" type="button">Belonging</button>
+          <div class="compass-center" aria-hidden="true"></div>
+        </div>
+
+        <article class="focus-panel" id="focus-panel">
+          <h3 id="focus-title">Control</h3>
+          <p id="focus-question">Where am I forcing the uncontrollable?</p>
+          <p id="focus-note">This question reveals tight gripping and helps you release unwinnable battles.</p>
+        </article>
+
+        <figure class="questions-figure">
+          <img src="images/four-quadrant-compass-diagram.png" alt="Four quadrant compass diagram labeled Control, Current, Teaching, and Belonging" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section direction" id="control" data-reveal>
+      <div class="direction-layout">
+        <article>
+          <p class="eyebrow">Direction One</p>
+          <h2>Control: Stop Fighting What You Do Not Control</h2>
+          <ul>
+            <li>We overestimate how much life obeys our will.</li>
+            <li>Letting go frees energy for what truly matters.</li>
+            <li>Acceptance is clear-eyed realism, not passivity.</li>
           </ul>
-        </div>
-        <figure class="image-frame">
-          <img src="RTS-1.jpg" alt="RTS command dashboard" />
-          <figcaption>Command the field. Keep receipts. Don't lose the thread.</figcaption>
+        </article>
+        <figure>
+          <img src="images/control-open-hands-sand.png" alt="Open hands releasing sand into the wind" loading="lazy">
         </figure>
-      </section>
-
-      <section class="grid frame reveal" id="rpg-panels">
-        <figure class="image-frame">
-          <img src="RPG-1.jpg" alt="RPG quest overview" />
-          <figcaption>Four panels. One quest. Many agents. Zero mystery.</figcaption>
+      </div>
+      <div class="practice-layout">
+        <article>
+          <h3>Practice Control</h3>
+          <ol>
+            <li>Notice tension, clenching, or looping anxious thoughts.</li>
+            <li>Ask: What exactly here is outside my control?</li>
+            <li>Release the imaginary levers you keep pulling.</li>
+            <li>Redirect attention to choices available now.</li>
+          </ol>
+        </article>
+        <figure>
+          <img src="images/control-unclenching-fist.png" alt="A fist relaxing into an open, calm hand" loading="lazy">
         </figure>
-        <div class="panel-grid">
-          <span class="eyebrow">RPG Mode</span>
-          <h2>Stop vibe coding. Start RPG coding.</h2>
-          <p>Same workflow. Better mental model. Give every agent a room.</p>
-          <div class="cards">
-            <article class="card">
-              <h3>Throne Room</h3>
-              <p>Define the <strong>Quest</strong>: goal, constraints, approvals.</p>
-            </article>
-            <article class="card">
-              <h3>Party Camp</h3>
-              <p>See roles + loadouts: who can write, who only tests, who audits.</p>
-            </article>
-            <article class="card">
-              <h3>War Table</h3>
-              <p>Manage subquests + dependencies -- the actual plan.</p>
-            </article>
-            <article class="card">
-              <h3>Scribe's Chronicle</h3>
-              <p>Timeline + evidence + diffs + loot. If it isn't here, it didn't happen.</p>
-            </article>
-          </div>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="kanban frame reveal" id="kings-kanban">
-        <div class="kanban-head">
-          <div>
-            <span class="eyebrow">King's Kanban</span>
-            <h2>Kanban, but make it royal</h2>
-            <p>Columns are the same. The meaning is clearer. Approvals aren't meetings. They're gates.</p>
-          </div>
-          <figure class="image-frame small">
-            <img src="RPG-4.jpg" alt="RPG Kanban panels" />
-          </figure>
-        </div>
-        <div class="kanban-strip delight-once" data-delight="kanban">
-          <div class="kanban-col">Backlog</div>
-          <div class="kanban-col">Summoned</div>
-          <div class="kanban-col">In the Field</div>
-          <div class="kanban-col">Waiting Approval</div>
-          <div class="kanban-col">Verified</div>
-          <div class="kanban-col">Done</div>
-        </div>
-      </section>
-
-      <section class="split frame reveal" id="character-sheet">
-        <div>
-          <span class="eyebrow">Character Sheet</span>
-          <h2>Agents need loadouts, not pep talks</h2>
-          <p>
-            Make capabilities explicit: tools allowed, context budget, triggers, and "don't touch
-            that" rules. "Please be careful" is not a system.
-          </p>
-          <div class="loadout">
-            <div class="loadout-card seal-flash">
-              <h3>Frontend Ranger</h3>
-              <p>Tools: Figma, Vite, Tailwind. Context cap: 42k. Triggers: UI polish.</p>
-            </div>
-            <div class="loadout-card">
-              <h3>Backend Cleric</h3>
-              <p>Tools: Postgres, FastAPI. Context cap: 30k. Triggers: audits, tests.</p>
-            </div>
-            <div class="loadout-card">
-              <h3>QA Paladin</h3>
-              <p>Tools: Playwright, Jest. Context cap: 18k. Triggers: regression alarms.</p>
-            </div>
-          </div>
-        </div>
-        <figure class="image-frame">
-          <img src="RPG-2.jpg" alt="RPG character sheet" />
-          <figcaption>Skills, gambits, and hooks -- because "be careful" isn't enough.</figcaption>
+    <section class="section direction" id="current" data-reveal>
+      <div class="direction-layout reverse">
+        <article>
+          <p class="eyebrow">Direction Two</p>
+          <h2>Current: Move With, Not Against, Life</h2>
+          <ul>
+            <li>Life unfolds like a river, not a machine.</li>
+            <li>Ask: Where is energy already flowing?</li>
+            <li>Cooperation uses momentum instead of brute force.</li>
+          </ul>
+        </article>
+        <figure>
+          <img src="images/current-kayaker-golden-river.png" alt="A kayaker moving with a river current in golden light" loading="lazy">
         </figure>
-      </section>
-
-      <section class="realm frame reveal" id="new-kingdom">
-        <div class="realm-text">
-          <span class="eyebrow">Found a New Kingdom</span>
-          <h2>Pick your harness. Declare your realm.</h2>
-          <p>Different kingdoms, same QuestOps UI. Your tools are your terrain.</p>
-          <div class="realm-row">
-            <div class="realm-pill"><i class="fa-solid fa-crown"></i> Claude Code</div>
-            <div class="realm-pill"><i class="fa-solid fa-terminal"></i> Codex CLI</div>
-            <div class="realm-pill"><i class="fa-solid fa-wand-magic-sparkles"></i> Gemini CLI</div>
-          </div>
-        </div>
-        <figure class="image-frame">
-          <img src="RPG-3.jpg" alt="RPG kingdom selection" />
-          <figcaption>Choose your base. The UI stays loyal.</figcaption>
+      </div>
+      <div class="practice-layout reverse">
+        <article>
+          <h3>Practice Current</h3>
+          <ol>
+            <li>Look for doors opening and timing that feels natural.</li>
+            <li>Ask: What happens if I stop pushing here?</li>
+            <li>Ride opportunities instead of muscling through.</li>
+            <li>Trust guidance from reality more than inner drama.</li>
+          </ol>
+        </article>
+        <figure>
+          <img src="images/current-open-doors-hallway.png" alt="A hallway with some doors open and warm light spilling out" loading="lazy">
         </figure>
-      </section>
+      </div>
+    </section>
 
-      <section class="footer frame reveal">
-        <div>
-          <h2>This is a concept worth building</h2>
-          <p>
-            If you've ever thought "I need a control room for my agents," congratulations -- you're in
-            the guild. Steal UI from games. Ship code like a party.
-          </p>
-        </div>
-        <div class="cta-row">
-          <button class="btn primary"><span>Follow the project</span></button>
-          <button class="btn ghost"><span>Contribute ideas</span></button>
-        </div>
-      </section>
-    </main>
+    <section class="section direction" id="teaching" data-reveal>
+      <div class="direction-layout">
+        <article>
+          <p class="eyebrow">Direction Three</p>
+          <h2>Teaching: Let Life Be Your Teacher</h2>
+          <ul>
+            <li>Every annoyance, delay, or surprise can carry a lesson.</li>
+            <li>Ask: What is this training?</li>
+            <li>Curiosity replaces resentment, and wisdom compounds.</li>
+          </ul>
+        </article>
+        <figure>
+          <img src="images/teaching-journal-window.png" alt="Person journaling by a window with everyday objects nearby" loading="lazy">
+        </figure>
+      </div>
+      <div class="practice-layout">
+        <article>
+          <h3>Practice Teaching</h3>
+          <ol>
+            <li>Pause when frustrated, embarrassed, or disappointed.</li>
+            <li>Ask: If this were training, what for?</li>
+            <li>Listen for themes like patience, boundaries, humility, courage.</li>
+            <li>Capture insights quickly before they fade.</li>
+          </ol>
+        </article>
+        <figure>
+          <img src="images/teaching-sticky-notes-themes.png" alt="Sticky notes on a wall with words like patience, boundaries, humility, courage" loading="lazy">
+        </figure>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
-  </body>
+    <section class="section direction" id="belonging" data-reveal>
+      <div class="direction-layout reverse">
+        <article>
+          <p class="eyebrow">Direction Four</p>
+          <h2>Belonging: Remember You Are Part of Everything</h2>
+          <ul>
+            <li>Watts emphasized deep interconnection.</li>
+            <li>Belonging shifts focus from self-obsession to participation.</li>
+            <li>Contribution replaces isolation as your default orientation.</li>
+          </ul>
+        </article>
+        <figure>
+          <img src="images/belonging-city-lights-web.png" alt="City lights from above forming an interconnected web" loading="lazy">
+        </figure>
+      </div>
+      <div class="practice-layout reverse">
+        <article>
+          <h3>Practice Belonging</h3>
+          <ol>
+            <li>Ask: How can I add value right here?</li>
+            <li>Offer presence, listening, or encouragement.</li>
+            <li>Notice how small acts ripple through your circles.</li>
+            <li>Belonging grows when you behave as though you belong.</li>
+          </ol>
+        </article>
+        <figure>
+          <img src="images/belonging-collaboration-table.png" alt="People collaborating around a table in a warm atmosphere" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section loop" id="loop" data-reveal>
+      <div>
+        <p class="eyebrow">How They Work Together</p>
+        <h2>A Continuous Loop</h2>
+        <ul>
+          <li><strong>Control</strong> frees energy by dropping unwinnable battles.</li>
+          <li><strong>Current</strong> redirects energy toward aligned opportunities.</li>
+          <li><strong>Teaching</strong> converts daily experience into wisdom.</li>
+          <li><strong>Belonging</strong> channels wisdom into caring contribution.</li>
+        </ul>
+      </div>
+      <figure class="loop-figure">
+        <img src="images/four-arrows-loop-diagram.png" alt="Four arrows in a loop labeled Control Current Teaching Belonging" loading="lazy">
+      </figure>
+    </section>
+
+    <section class="section day-rhythm" id="day-rhythm" data-reveal>
+      <div>
+        <p class="eyebrow">A Day With the Compass</p>
+        <h2>Morning, Daytime, Evening</h2>
+        <ol>
+          <li><strong>Morning:</strong> Glance at all four questions.</li>
+          <li><strong>Daytime:</strong> Recall whichever question fits the moment.</li>
+          <li><strong>Evening:</strong> Review how you moved through them.</li>
+        </ol>
+      </div>
+      <figure>
+        <img src="images/day-triptych-morning-day-evening.png" alt="Triptych showing sunrise, daytime movement, and an evening desk with a notebook" loading="lazy">
+      </figure>
+    </section>
+
+    <section class="section values" id="values" data-reveal>
+      <div class="direction-layout">
+        <article>
+          <p class="eyebrow">Always in Light of Your Values</p>
+          <h2>Direction, Not Perfection</h2>
+          <p>The compass is not conformity. Your values define what "moving with the current" means for your life. Ask: Did I honor what matters most today?</p>
+          <p>Small loyal steps compound into a coherent life.</p>
+        </article>
+        <figure>
+          <img src="images/values-crossroads-signposts.png" alt="A person at a crossroads with signposts for honesty care and courage" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section reset" id="reset" data-reveal>
+      <div class="direction-layout reverse">
+        <article>
+          <p class="eyebrow">When You Forget</p>
+          <h2>Return Gently</h2>
+          <p>Forgetting is normal. Noticing you forgot is progress. Difficult days are rich teaching material. Rewrite the day with the four questions and continue with a kind, playful tone.</p>
+        </article>
+        <figure>
+          <img src="images/reset-crumple-and-restart.png" alt="Someone crumpling a page and beginning a fresh journal page" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section daily-card" id="daily-card" data-reveal>
+      <div class="daily-card-head">
+        <p class="eyebrow">Take It With You</p>
+        <h2>The Watts Compass Daily Card</h2>
+        <p>Read this morning, midday, and evening.</p>
+      </div>
+
+      <article class="card" aria-label="Printable Watts Compass card">
+        <h3>The Watts Compass</h3>
+        <div class="card-grid">
+          <section>
+            <h4>Control</h4>
+            <p>Where am I trying to control what I do not actually control?</p>
+          </section>
+          <section>
+            <h4>Current</h4>
+            <p>How can I cooperate with the current instead of fight it?</p>
+          </section>
+          <section>
+            <h4>Teaching</h4>
+            <p>What is life trying to teach me today?</p>
+          </section>
+          <section>
+            <h4>Belonging</h4>
+            <p>How can I contribute here, as part of the whole?</p>
+          </section>
+        </div>
+
+        <div class="why-works">
+          <p><strong>Why it works</strong></p>
+          <p>Control stops wasted energy. Current shifts forcing to cooperation. Teaching turns frustration into growth. Belonging keeps you in service.</p>
+        </div>
+
+        <div class="journal-prompt" id="journal-prompt">
+          How did I move through these four today, in light of my values?
+        </div>
+      </article>
+
+      <div class="card-actions">
+        <button id="print-card" type="button">Print Daily Card</button>
+        <button id="copy-prompt" type="button" class="ghost">Copy Journal Prompt</button>
+        <span id="copy-status" aria-live="polite"></span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="section footer">
+    <p>Practice is the point. Perfection is not.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
-
-

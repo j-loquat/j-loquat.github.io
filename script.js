@@ -1,100 +1,92 @@
-const revealItems = document.querySelectorAll('.reveal');
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        observer.unobserve(entry.target);
-      }
-    });
+const compassData = {
+  control: {
+    title: "Control",
+    question: "Where am I forcing the uncontrollable?",
+    note: "Name what you cannot command, then spend energy only where a real choice exists."
   },
-  { threshold: 0.15 }
-);
-
-revealItems.forEach((item) => observer.observe(item));
-
-const delightItems = document.querySelectorAll('[data-delight]');
-
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-const runCountUp = (container) => {
-  const stats = container.querySelectorAll('.stat[data-count]');
-  stats.forEach((stat) => {
-    const target = Number.parseInt(stat.dataset.count, 10) || 0;
-    const prefix = stat.dataset.prefix || '';
-    const suffix = stat.dataset.suffix || '';
-    const pad = Number.parseInt(stat.dataset.pad, 10) || 0;
-    const duration = 650;
-
-    if (prefersReducedMotion) {
-      let text = target.toString();
-      if (pad) {
-        text = text.padStart(pad, '0');
-      }
-      stat.textContent = `${prefix}${text}${suffix}`;
-      return;
-    }
-    const start = performance.now();
-
-    const tick = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const value = Math.floor(progress * target);
-      let text = value.toString();
-      if (pad) {
-        text = text.padStart(pad, '0');
-      }
-      stat.textContent = `${prefix}${text}${suffix}`;
-      if (progress < 1) {
-        requestAnimationFrame(tick);
-      }
-    };
-
-    requestAnimationFrame(tick);
-  });
+  current: {
+    title: "Current",
+    question: "How can I move with events?",
+    note: "Look for momentum that is already present and cooperate with it."
+  },
+  teaching: {
+    title: "Teaching",
+    question: "What is life showing me today?",
+    note: "Treat friction as training data so daily events become practical wisdom."
+  },
+  belonging: {
+    title: "Belonging",
+    question: "How can I serve the whole?",
+    note: "Shift from self-obsession toward contribution in the current moment."
+  }
 };
 
-const delightObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
+const nodes = Array.from(document.querySelectorAll(".compass-node"));
+const titleEl = document.getElementById("focus-title");
+const questionEl = document.getElementById("focus-question");
+const noteEl = document.getElementById("focus-note");
 
-      const { delight } = entry.target.dataset;
-      if (delight === 'scoreboard') {
-        entry.target.classList.add('sweep');
-        runCountUp(entry.target);
-      }
-      if (delight === 'kanban') {
-        entry.target.classList.add('progress');
-      }
+function setFocus(key) {
+  const data = compassData[key];
+  if (!data) {
+    return;
+  }
 
-      delightObserver.unobserve(entry.target);
-    });
-  },
-  { threshold: 0.3 }
-);
+  titleEl.textContent = data.title;
+  questionEl.textContent = data.question;
+  noteEl.textContent = data.note;
 
-delightItems.forEach((item) => delightObserver.observe(item));
-
-const triggerClickAnim = (element, className, duration) => {
-  if (!element) return;
-  element.classList.remove(className);
-  void element.offsetWidth;
-  element.classList.add(className);
-  window.setTimeout(() => {
-    element.classList.remove(className);
-  }, duration);
-};
-
-document.querySelectorAll('.btn').forEach((button) => {
-  button.addEventListener('click', () => {
-    triggerClickAnim(button, 'clicked', 450);
+  nodes.forEach((node) => {
+    node.classList.toggle("is-active", node.dataset.key === key);
   });
+}
+
+nodes.forEach((node) => {
+  node.addEventListener("click", () => setFocus(node.dataset.key));
 });
 
-const profile = document.querySelector('.profile');
-if (profile) {
-  profile.addEventListener('click', () => {
-    triggerClickAnim(profile, 'stamped', 450);
+const revealTargets = document.querySelectorAll("[data-reveal]");
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.18 }
+  );
+
+  revealTargets.forEach((target) => observer.observe(target));
+} else {
+  revealTargets.forEach((target) => target.classList.add("is-visible"));
+}
+
+const printBtn = document.getElementById("print-card");
+if (printBtn) {
+  printBtn.addEventListener("click", () => {
+    window.print();
+  });
+}
+
+const copyBtn = document.getElementById("copy-prompt");
+const copyStatus = document.getElementById("copy-status");
+const promptEl = document.getElementById("journal-prompt");
+
+if (copyBtn && copyStatus && promptEl) {
+  copyBtn.addEventListener("click", async () => {
+    const text = promptEl.textContent.trim();
+    try {
+      await navigator.clipboard.writeText(text);
+      copyStatus.textContent = "Journal prompt copied.";
+    } catch (error) {
+      copyStatus.textContent = "Copy failed. Select and copy manually.";
+    }
+
+    setTimeout(() => {
+      copyStatus.textContent = "";
+    }, 2200);
   });
 }
