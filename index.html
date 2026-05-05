@@ -1,306 +1,241 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Watts Daily Compass</title>
-  <meta name="description" content="A practical, values-guided daily compass inspired by Alan Watts: Control, Current, Teaching, Belonging.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Watts Compass</title>
+  <meta name="description" content="Four simple questions for meeting life with less resistance and more presence.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="page-grain" aria-hidden="true"></div>
-
-  <header class="hero section" id="top" data-reveal>
-    <nav class="top-nav" aria-label="Main">
-      <a href="#questions">The Four Questions</a>
-      <a href="#day-rhythm">Daily Rhythm</a>
-      <a href="#daily-card">Printable Card</a>
+  <header class="site-header" aria-label="Primary">
+    <a class="brand" href="#top" aria-label="The Watts Compass home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>The Watts Compass</span>
+    </a>
+    <nav class="nav-links" aria-label="Page sections">
+      <a href="#compass">Compass</a>
+      <a href="#daily">Daily rhythm</a>
+      <a href="#card">Print card</a>
     </nav>
-
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">Watts Daily Compass</p>
-        <h1>From Fighting Life to Flowing With It</h1>
-        <p class="lead">Many days feel like constant pushing, forcing, and resisting. Alan Watts suggested another way: cooperate with life. This compass turns that into a daily practice of four simple questions.</p>
-      </div>
-      <figure class="hero-figure frame-tilt">
-        <img src="images/hero-boat-river-sunrise.png" alt="A person in a small boat drifting on a calm river at sunrise" loading="eager">
-      </figure>
-    </div>
   </header>
 
-  <main>
-    <section class="section strategy" id="strategy" data-reveal>
-      <div>
-        <p class="eyebrow">What It Is</p>
-        <h2>A Simple Daily Life Strategy</h2>
-        <p>Four questions, one compass for everyday decisions. Rooted in surrender, curiosity, and interconnection. Fast enough for a busy moment, deep enough to reshape your lifestyle.</p>
-      </div>
-      <figure class="offset-figure">
-        <img src="images/compass-calendar-minimal.png" alt="Minimal compass icon over a calendar page" loading="lazy">
-      </figure>
-    </section>
-
-    <section class="section questions" id="questions" data-reveal>
-      <div class="questions-head">
-        <p class="eyebrow">The Four Questions</p>
-        <h2>One Compass for Everyday Decisions</h2>
-      </div>
-
-      <div class="questions-layout">
-        <div class="compass-widget" aria-live="polite">
-          <button class="compass-node is-active" data-key="control" type="button">Control</button>
-          <button class="compass-node" data-key="current" type="button">Current</button>
-          <button class="compass-node" data-key="teaching" type="button">Teaching</button>
-          <button class="compass-node" data-key="belonging" type="button">Belonging</button>
-          <div class="compass-center" aria-hidden="true"></div>
+  <main id="top">
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <img class="hero-art" src="river-watercolor.png" alt="Pale watercolor river flowing through soft green hills.">
+      <div class="hero-copy">
+        <p class="eyebrow">Inspired by Alan Watts</p>
+        <h1 id="hero-title">The Watts Compass</h1>
+        <p class="hero-subtitle">Four simple questions for meeting life with less resistance and more presence.</p>
+        <p class="hero-body">When life feels like pushing, forcing, and bracing, the compass gives you a softer way to orient. Notice what you cannot control. Move with the current already here. Let the day teach you. Then contribute where you are.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#compass">Use the compass</a>
+          <a class="button secondary" href="#card">Print the daily card</a>
         </div>
-
-        <article class="focus-panel" id="focus-panel">
-          <h3 id="focus-title">Control</h3>
-          <p id="focus-question">Where am I forcing the uncontrollable?</p>
-          <p id="focus-note">This question reveals tight gripping and helps you release unwinnable battles.</p>
-        </article>
-
-        <figure class="questions-figure">
-          <img src="images/four-quadrant-compass-diagram.png" alt="Four quadrant compass diagram labeled Control, Current, Teaching, and Belonging" loading="lazy">
-        </figure>
       </div>
-    </section>
-
-    <section class="section direction" id="control" data-reveal>
-      <div class="direction-layout">
-        <article>
-          <p class="eyebrow">Direction One</p>
-          <h2>Control: Stop Fighting What You Do Not Control</h2>
-          <ul>
-            <li>We overestimate how much life obeys our will.</li>
-            <li>Letting go frees energy for what truly matters.</li>
-            <li>Acceptance is clear-eyed realism, not passivity.</li>
-          </ul>
-        </article>
-        <figure>
-          <img src="images/control-open-hands-sand.png" alt="Open hands releasing sand into the wind" loading="lazy">
-        </figure>
-      </div>
-      <div class="practice-layout">
-        <article>
-          <h3>Practice Control</h3>
-          <ol>
-            <li>Notice tension, clenching, or looping anxious thoughts.</li>
-            <li>Ask: What exactly here is outside my control?</li>
-            <li>Release the imaginary levers you keep pulling.</li>
-            <li>Redirect attention to choices available now.</li>
-          </ol>
-        </article>
-        <figure>
-          <img src="images/control-unclenching-fist.png" alt="A fist relaxing into an open, calm hand" loading="lazy">
-        </figure>
-      </div>
-    </section>
-
-    <section class="section direction" id="current" data-reveal>
-      <div class="direction-layout reverse">
-        <article>
-          <p class="eyebrow">Direction Two</p>
-          <h2>Current: Move With, Not Against, Life</h2>
-          <ul>
-            <li>Life unfolds like a river, not a machine.</li>
-            <li>Ask: Where is energy already flowing?</li>
-            <li>Cooperation uses momentum instead of brute force.</li>
-          </ul>
-        </article>
-        <figure>
-          <img src="images/current-kayaker-golden-river.png" alt="A kayaker moving with a river current in golden light" loading="lazy">
-        </figure>
-      </div>
-      <div class="practice-layout reverse">
-        <article>
-          <h3>Practice Current</h3>
-          <ol>
-            <li>Look for doors opening and timing that feels natural.</li>
-            <li>Ask: What happens if I stop pushing here?</li>
-            <li>Ride opportunities instead of muscling through.</li>
-            <li>Trust guidance from reality more than inner drama.</li>
-          </ol>
-        </article>
-        <figure>
-          <img src="images/current-open-doors-hallway.png" alt="A hallway with some doors open and warm light spilling out" loading="lazy">
-        </figure>
-      </div>
-    </section>
-
-    <section class="section direction" id="teaching" data-reveal>
-      <div class="direction-layout">
-        <article>
-          <p class="eyebrow">Direction Three</p>
-          <h2>Teaching: Let Life Be Your Teacher</h2>
-          <ul>
-            <li>Every annoyance, delay, or surprise can carry a lesson.</li>
-            <li>Ask: What is this training?</li>
-            <li>Curiosity replaces resentment, and wisdom compounds.</li>
-          </ul>
-        </article>
-        <figure>
-          <img src="images/teaching-journal-window.png" alt="Person journaling by a window with everyday objects nearby" loading="lazy">
-        </figure>
-      </div>
-      <div class="practice-layout">
-        <article>
-          <h3>Practice Teaching</h3>
-          <ol>
-            <li>Pause when frustrated, embarrassed, or disappointed.</li>
-            <li>Ask: If this were training, what for?</li>
-            <li>Listen for themes like patience, boundaries, humility, courage.</li>
-            <li>Capture insights quickly before they fade.</li>
-          </ol>
-        </article>
-        <figure>
-          <img src="images/teaching-sticky-notes-themes.png" alt="Sticky notes on a wall with words like patience, boundaries, humility, courage" loading="lazy">
-        </figure>
-      </div>
-    </section>
-
-    <section class="section direction" id="belonging" data-reveal>
-      <div class="direction-layout reverse">
-        <article>
-          <p class="eyebrow">Direction Four</p>
-          <h2>Belonging: Remember You Are Part of Everything</h2>
-          <ul>
-            <li>Watts emphasized deep interconnection.</li>
-            <li>Belonging shifts focus from self-obsession to participation.</li>
-            <li>Contribution replaces isolation as your default orientation.</li>
-          </ul>
-        </article>
-        <figure>
-          <img src="images/belonging-city-lights-web.png" alt="City lights from above forming an interconnected web" loading="lazy">
-        </figure>
-      </div>
-      <div class="practice-layout reverse">
-        <article>
-          <h3>Practice Belonging</h3>
-          <ol>
-            <li>Ask: How can I add value right here?</li>
-            <li>Offer presence, listening, or encouragement.</li>
-            <li>Notice how small acts ripple through your circles.</li>
-            <li>Belonging grows when you behave as though you belong.</li>
-          </ol>
-        </article>
-        <figure>
-          <img src="images/belonging-collaboration-table.png" alt="People collaborating around a table in a warm atmosphere" loading="lazy">
-        </figure>
-      </div>
-    </section>
-
-    <section class="section loop" id="loop" data-reveal>
-      <div>
-        <p class="eyebrow">How They Work Together</p>
-        <h2>A Continuous Loop</h2>
-        <ul>
-          <li><strong>Control</strong> frees energy by dropping unwinnable battles.</li>
-          <li><strong>Current</strong> redirects energy toward aligned opportunities.</li>
-          <li><strong>Teaching</strong> converts daily experience into wisdom.</li>
-          <li><strong>Belonging</strong> channels wisdom into caring contribution.</li>
-        </ul>
-      </div>
-      <figure class="loop-figure">
-        <img src="images/four-arrows-loop-diagram.png" alt="Four arrows in a loop labeled Control Current Teaching Belonging" loading="lazy">
-      </figure>
-    </section>
-
-    <section class="section day-rhythm" id="day-rhythm" data-reveal>
-      <div>
-        <p class="eyebrow">A Day With the Compass</p>
-        <h2>Morning, Daytime, Evening</h2>
+      <aside class="hero-card" aria-label="The four compass questions">
+        <p class="card-kicker">The four questions</p>
         <ol>
-          <li><strong>Morning:</strong> Glance at all four questions.</li>
-          <li><strong>Daytime:</strong> Recall whichever question fits the moment.</li>
-          <li><strong>Evening:</strong> Review how you moved through them.</li>
+          <li><span>Control</span><small>What can I release?</small></li>
+          <li><span>Current</span><small>How can I move with this?</small></li>
+          <li><span>Teaching</span><small>What is this showing me?</small></li>
+          <li><span>Belonging</span><small>How can I contribute?</small></li>
         </ol>
-      </div>
-      <figure>
-        <img src="images/day-triptych-morning-day-evening.png" alt="Triptych showing sunrise, daytime movement, and an evening desk with a notebook" loading="lazy">
-      </figure>
+      </aside>
     </section>
 
-    <section class="section values" id="values" data-reveal>
-      <div class="direction-layout">
-        <article>
-          <p class="eyebrow">Always in Light of Your Values</p>
-          <h2>Direction, Not Perfection</h2>
-          <p>The compass is not conformity. Your values define what "moving with the current" means for your life. Ask: Did I honor what matters most today?</p>
-          <p>Small loyal steps compound into a coherent life.</p>
+    <section id="compass" class="section-shell compass-section" aria-labelledby="compass-title">
+      <div class="section-heading">
+        <p class="eyebrow">Start here</p>
+        <h2 id="compass-title">Ask one question at a time.</h2>
+        <p>You do not need to solve your whole life. Start with the question that fits the moment.</p>
+      </div>
+
+      <div class="compass-layout">
+        <div class="compass-map" aria-label="Choose a compass question">
+          <button class="compass-point is-active" type="button" data-compass="control">
+            <span class="point-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 12c3.5-1.2 6-3.7 7.7-7.5 2.2 5.2.7 10.6-3.7 14.8M5 18c4.5.8 8.3-.3 11.5-3.3"/></svg>
+            </span>
+            <strong>Control</strong>
+            <small>What can I release?</small>
+          </button>
+          <button class="compass-point" type="button" data-compass="current">
+            <span class="point-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 8c3 0 3-2 6-2s3 2 6 2 3-2 6-2M3 14c3 0 3-2 6-2s3 2 6 2 3-2 6-2M3 20c3 0 3-2 6-2s3 2 6 2 3-2 6-2"/></svg>
+            </span>
+            <strong>Current</strong>
+            <small>How can I move with this?</small>
+          </button>
+          <button class="compass-point" type="button" data-compass="teaching">
+            <span class="point-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 5.5c2.7 0 4.8.5 7 2v12c-2.2-1.5-4.3-2-7-2v-12ZM19 5.5c-2.7 0-4.8.5-7 2v12c2.2-1.5 4.3-2 7-2v-12Z"/></svg>
+            </span>
+            <strong>Teaching</strong>
+            <small>What is this showing me?</small>
+          </button>
+          <button class="compass-point" type="button" data-compass="belonging">
+            <span class="point-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM5.5 20a4.5 4.5 0 0 1 13 0M5 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM1.5 20a3.8 3.8 0 0 1 5.2-3.6M19 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM22.5 20a3.8 3.8 0 0 0-5.2-3.6"/></svg>
+            </span>
+            <strong>Belonging</strong>
+            <small>How can I contribute?</small>
+          </button>
+        </div>
+
+        <article class="active-card" aria-live="polite">
+          <p class="card-kicker" id="active-kicker">Control</p>
+          <h3 id="active-question">What am I trying to control that I do not actually control?</h3>
+          <p id="active-meaning">Release the imaginary levers. Save your energy for the choices that are really yours.</p>
+          <dl>
+            <div>
+              <dt>Use it when</dt>
+              <dd id="active-when">You are tense, looping, bracing, arguing with reality, or trying to force an outcome.</dd>
+            </div>
+            <div>
+              <dt>Tiny practice</dt>
+              <dd id="active-practice">Name one thing outside your control. Then name one next action that is inside your control.</dd>
+            </div>
+          </dl>
         </article>
-        <figure>
-          <img src="images/values-crossroads-signposts.png" alt="A person at a crossroads with signposts for honesty care and courage" loading="lazy">
-        </figure>
       </div>
     </section>
 
-    <section class="section reset" id="reset" data-reveal>
-      <div class="direction-layout reverse">
-        <article>
-          <p class="eyebrow">When You Forget</p>
-          <h2>Return Gently</h2>
-          <p>Forgetting is normal. Noticing you forgot is progress. Difficult days are rich teaching material. Rewrite the day with the four questions and continue with a kind, playful tone.</p>
-        </article>
-        <figure>
-          <img src="images/reset-crumple-and-restart.png" alt="Someone crumpling a page and beginning a fresh journal page" loading="lazy">
-        </figure>
+    <section class="section-shell flow-section" aria-labelledby="flow-title">
+      <div class="paper-panel split-panel">
+        <div>
+          <p class="eyebrow">How it works</p>
+          <h2 id="flow-title">Less resistance. More participation.</h2>
+          <p>The compass is not about becoming passive. It is about seeing clearly. First, stop spending energy on what cannot be forced. Then notice where life is already moving. Let each event teach you something. Finally, act as someone who belongs to the whole situation.</p>
+        </div>
+        <div class="flow-list" aria-label="Four benefits">
+          <div><span>01</span><strong>Control saves energy.</strong></div>
+          <div><span>02</span><strong>Current finds momentum.</strong></div>
+          <div><span>03</span><strong>Teaching turns experience into wisdom.</strong></div>
+          <div><span>04</span><strong>Belonging turns wisdom into care.</strong></div>
+        </div>
       </div>
     </section>
 
-    <section class="section daily-card" id="daily-card" data-reveal>
-      <div class="daily-card-head">
-        <p class="eyebrow">Take It With You</p>
-        <h2>The Watts Compass Daily Card</h2>
-        <p>Read this morning, midday, and evening.</p>
-      </div>
-
-      <article class="card" aria-label="Printable Watts Compass card">
-        <h3>The Watts Compass</h3>
-        <div class="card-grid">
-          <section>
-            <h4>Control</h4>
-            <p>Where am I trying to control what I do not actually control?</p>
-          </section>
-          <section>
-            <h4>Current</h4>
-            <p>How can I cooperate with the current instead of fight it?</p>
-          </section>
-          <section>
-            <h4>Teaching</h4>
-            <p>What is life trying to teach me today?</p>
-          </section>
-          <section>
-            <h4>Belonging</h4>
-            <p>How can I contribute here, as part of the whole?</p>
-          </section>
+    <section class="section-shell question-river" aria-label="The four compass directions">
+      <article class="question-strip" id="control">
+        <span class="strip-number">01</span>
+        <div>
+          <p class="card-kicker">Control</p>
+          <h2>What am I trying to control that I do not actually control?</h2>
         </div>
-
-        <div class="why-works">
-          <p><strong>Why it works</strong></p>
-          <p>Control stops wasted energy. Current shifts forcing to cooperation. Teaching turns frustration into growth. Belonging keeps you in service.</p>
-        </div>
-
-        <div class="journal-prompt" id="journal-prompt">
-          How did I move through these four today, in light of my values?
-        </div>
+        <p>Release the imaginary levers. Name what is outside your control, then choose one action that is actually yours.</p>
       </article>
+      <article class="question-strip" id="current">
+        <span class="strip-number">02</span>
+        <div>
+          <p class="card-kicker">Current</p>
+          <h2>How can I cooperate with the current instead of fight it?</h2>
+        </div>
+        <p>Look for where life already has motion. Follow the open door for one small step.</p>
+      </article>
+      <article class="question-strip" id="teaching">
+        <span class="strip-number">03</span>
+        <div>
+          <p class="card-kicker">Teaching</p>
+          <h2>What is life trying to teach me today?</h2>
+        </div>
+        <p>Curiosity turns friction into information. Try: "This may be training me in..."</p>
+      </article>
+      <article class="question-strip" id="belonging">
+        <span class="strip-number">04</span>
+        <div>
+          <p class="card-kicker">Belonging</p>
+          <h2>How can I contribute here, as part of the whole?</h2>
+        </div>
+        <p>Offer one useful thing: attention, honesty, patience, help, repair, or encouragement.</p>
+      </article>
+    </section>
 
-      <div class="card-actions">
-        <button id="print-card" type="button">Print Daily Card</button>
-        <button id="copy-prompt" type="button" class="ghost">Copy Journal Prompt</button>
-        <span id="copy-status" aria-live="polite"></span>
+    <section id="daily" class="section-shell daily-section" aria-labelledby="daily-title">
+      <div class="section-heading">
+        <p class="eyebrow">Daily rhythm</p>
+        <h2 id="daily-title">Use it in three small moments.</h2>
       </div>
+      <div class="rhythm-grid">
+        <article>
+          <span class="sun-icon" aria-hidden="true"></span>
+          <h3>Morning</h3>
+          <p>Set your direction.</p>
+          <strong>Which question do I want to carry today?</strong>
+        </article>
+        <article>
+          <span class="day-icon" aria-hidden="true"></span>
+          <h3>Midday</h3>
+          <p>Return to the moment.</p>
+          <strong>Which question would soften this situation?</strong>
+        </article>
+        <article>
+          <span class="moon-icon" aria-hidden="true"></span>
+          <h3>Evening</h3>
+          <p>Gather the lesson.</p>
+          <strong>How did I move through the four questions, in light of my values?</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell reflection-section" aria-labelledby="values-title">
+      <div class="paper-panel reflection-panel">
+        <div>
+          <p class="eyebrow">Values anchor</p>
+          <h2 id="values-title">The current is not conformity.</h2>
+          <p>Moving with life does not mean drifting into whatever is easiest. Your values still matter. They help you tell the difference between wise cooperation and quiet self-betrayal.</p>
+        </div>
+        <blockquote>
+          What would it look like to move with this moment while still honoring what matters most?
+        </blockquote>
+      </div>
+      <div class="forget-note">
+        <h2>Forgetting is part of the practice.</h2>
+        <p>You will forget the compass. You will grip, force, resist, and replay old patterns. That is not failure. The moment you notice, the practice has already restarted.</p>
+        <p class="prompt-line">What did I learn after I forgot?</p>
+      </div>
+    </section>
+
+    <section id="card" class="section-shell print-section" aria-labelledby="card-title">
+      <div class="section-heading">
+        <p class="eyebrow">Keep nearby</p>
+        <h2 id="card-title">Print the daily card.</h2>
+        <p>Read it in the morning. Return to it during the day. Review it at night.</p>
+      </div>
+
+      <div class="print-layout">
+        <article class="daily-card" id="daily-card" aria-label="Printable Watts Compass daily card">
+          <div class="daily-card-header">
+            <p class="card-kicker">Daily practice</p>
+            <h2>The Watts Compass</h2>
+          </div>
+          <ol class="card-questions">
+            <li><strong>Control</strong><span>What am I trying to control that I do not actually control?</span></li>
+            <li><strong>Current</strong><span>How can I cooperate with the current instead of fight it?</span></li>
+            <li><strong>Teaching</strong><span>What is life trying to teach me today?</span></li>
+            <li><strong>Belonging</strong><span>How can I contribute here, as part of the whole?</span></li>
+          </ol>
+          <div class="journal-prompt">
+            <strong>Tonight</strong>
+            <p>How did I move through these four today, in light of my values?</p>
+          </div>
+        </article>
+        <div class="print-copy">
+          <h3>A small card. A big shift.</h3>
+          <p>Use the card as a reminder, not a rulebook. One sincere question is enough to change the shape of a moment.</p>
+          <button class="button primary" type="button" id="print-button">Print daily card</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing section-shell" aria-label="Closing thought">
+      <p>Do not try to master life. Practice participating in it.</p>
     </section>
   </main>
 
-  <footer class="section footer">
-    <p>Practice is the point. Perfection is not.</p>
+  <footer class="site-footer">
+    <p>Inspired by themes associated with Alan Watts: acceptance, flow, curiosity, and interconnection.</p>
   </footer>
 
   <script src="script.js"></script>

@@ -1,92 +1,70 @@
 const compassData = {
   control: {
     title: "Control",
-    question: "Where am I forcing the uncontrollable?",
-    note: "Name what you cannot command, then spend energy only where a real choice exists."
+    question: "What am I trying to control that I do not actually control?",
+    meaning: "Release the imaginary levers. Save your energy for the choices that are really yours.",
+    when: "You are tense, looping, bracing, arguing with reality, or trying to force an outcome.",
+    practice: "Name one thing outside your control. Then name one next action that is inside your control."
   },
   current: {
     title: "Current",
-    question: "How can I move with events?",
-    note: "Look for momentum that is already present and cooperate with it."
+    question: "How can I cooperate with the current instead of fight it?",
+    meaning: "Look for where life already has motion. Let reality show you the easier path.",
+    when: "Everything feels stuck, overworked, delayed, or harder than it should be.",
+    practice: "Ask what is already moving. Follow the open door for one small step."
   },
   teaching: {
     title: "Teaching",
-    question: "What is life showing me today?",
-    note: "Treat friction as training data so daily events become practical wisdom."
+    question: "What is life trying to teach me today?",
+    meaning: "Every friction point can become information. Curiosity turns a bad moment into usable wisdom.",
+    when: "You feel annoyed, embarrassed, disappointed, impatient, or caught in a familiar pattern.",
+    practice: "Finish this sentence: \"This may be training me in...\""
   },
   belonging: {
     title: "Belonging",
-    question: "How can I serve the whole?",
-    note: "Shift from self-obsession toward contribution in the current moment."
+    question: "How can I contribute here, as part of the whole?",
+    meaning: "You are not separate from the scene. You are one of the ways life responds to itself.",
+    when: "You feel isolated, self-absorbed, defensive, or unsure how to matter.",
+    practice: "Offer one useful thing: attention, honesty, patience, help, repair, or encouragement."
   }
 };
 
-const nodes = Array.from(document.querySelectorAll(".compass-node"));
-const titleEl = document.getElementById("focus-title");
-const questionEl = document.getElementById("focus-question");
-const noteEl = document.getElementById("focus-note");
+const points = document.querySelectorAll(".compass-point");
+const activeKicker = document.querySelector("#active-kicker");
+const activeQuestion = document.querySelector("#active-question");
+const activeMeaning = document.querySelector("#active-meaning");
+const activeWhen = document.querySelector("#active-when");
+const activePractice = document.querySelector("#active-practice");
+const printButton = document.querySelector("#print-button");
 
-function setFocus(key) {
-  const data = compassData[key];
-  if (!data) {
-    return;
-  }
+function setCompass(key) {
+  const item = compassData[key];
+  if (!item) return;
 
-  titleEl.textContent = data.title;
-  questionEl.textContent = data.question;
-  noteEl.textContent = data.note;
-
-  nodes.forEach((node) => {
-    node.classList.toggle("is-active", node.dataset.key === key);
+  points.forEach((point) => {
+    point.classList.toggle("is-active", point.dataset.compass === key);
   });
+
+  activeKicker.textContent = item.title;
+  activeQuestion.textContent = item.question;
+  activeMeaning.textContent = item.meaning;
+  activeWhen.textContent = item.when;
+  activePractice.textContent = item.practice;
 }
 
-nodes.forEach((node) => {
-  node.addEventListener("click", () => setFocus(node.dataset.key));
+points.forEach((point) => {
+  point.addEventListener("click", () => setCompass(point.dataset.compass));
 });
 
-const revealTargets = document.querySelectorAll("[data-reveal]");
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.18 }
-  );
+printButton?.addEventListener("click", () => {
+  window.print();
+});
 
-  revealTargets.forEach((target) => observer.observe(target));
-} else {
-  revealTargets.forEach((target) => target.classList.add("is-visible"));
-}
-
-const printBtn = document.getElementById("print-card");
-if (printBtn) {
-  printBtn.addEventListener("click", () => {
-    window.print();
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const target = document.querySelector(link.getAttribute("href"));
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
   });
-}
-
-const copyBtn = document.getElementById("copy-prompt");
-const copyStatus = document.getElementById("copy-status");
-const promptEl = document.getElementById("journal-prompt");
-
-if (copyBtn && copyStatus && promptEl) {
-  copyBtn.addEventListener("click", async () => {
-    const text = promptEl.textContent.trim();
-    try {
-      await navigator.clipboard.writeText(text);
-      copyStatus.textContent = "Journal prompt copied.";
-    } catch (error) {
-      copyStatus.textContent = "Copy failed. Select and copy manually.";
-    }
-
-    setTimeout(() => {
-      copyStatus.textContent = "";
-    }, 2200);
-  });
-}
+});
